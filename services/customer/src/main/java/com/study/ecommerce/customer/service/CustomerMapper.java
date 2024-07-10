@@ -2,6 +2,7 @@ package com.study.ecommerce.customer.service;
 
 import com.study.ecommerce.customer.domain.Customer;
 import com.study.ecommerce.customer.dto.request.CustomerRequest;
+import com.study.ecommerce.customer.dto.response.CustomerResponse;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,5 +16,15 @@ public class CustomerMapper {
                 .email(request.email())
                 .address(request.address())
                 .build();
+    }
+
+    public CustomerResponse fromCustomer(final Customer customer) {
+        return new CustomerResponse(
+                customer.getId(),
+                customer.getFirstname(),
+                customer.getLastname(),
+                customer.getEmail(),
+                customer.getAddress()
+        );
     }
 }
