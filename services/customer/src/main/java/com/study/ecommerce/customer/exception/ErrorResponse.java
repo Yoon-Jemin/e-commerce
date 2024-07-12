@@ -1,4 +1,4 @@
-package com.study.ecommerce.customer.domain.exception;
+package com.study.ecommerce.customer.exception;
 
 import java.util.Map;
 

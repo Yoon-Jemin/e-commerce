@@ -1,12 +1,11 @@
 package com.study.ecommerce.customer.service;
 
 import com.study.ecommerce.customer.domain.Customer;
-import com.study.ecommerce.customer.domain.exception.CustomerNotFoundException;
+import com.study.ecommerce.customer.exception.CustomerNotFoundException;
 import com.study.ecommerce.customer.domain.repository.CustomerRepository;
 import com.study.ecommerce.customer.dto.request.CustomerRequest;
 import com.study.ecommerce.customer.dto.response.CustomerResponse;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 
