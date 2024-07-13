@@ -1,8 +1,15 @@
 package com.study.ecommerce.product.domain;
 
-import com.study.ecommerce.product.domain.Category;
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 
@@ -17,15 +24,10 @@ public class Product {
     @Id
     @GeneratedValue
     private Integer id;
-
     private String name;
-
     private String description;
-
     private double availableQuantity;
-
-    private BigDecimal price;   // 가격 관련 속성은 BigDecimal을 사용하는 것이 좋음
-
+    private BigDecimal price;
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;

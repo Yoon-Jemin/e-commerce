@@ -1,7 +1,15 @@
 package com.study.ecommerce.product.domain;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -16,12 +24,8 @@ public class Category {
     @Id
     @GeneratedValue
     private Integer id;
-
     private String name;
-
     private String description;
-
-    // Category 삭제 시, Category에 해당하는 모든 Product 삭제
     @OneToMany(mappedBy = "category", cascade = CascadeType.REMOVE)
     private List<Product> products;
 }

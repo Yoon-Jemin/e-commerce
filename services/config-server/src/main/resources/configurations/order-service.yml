@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/order
+    username: jemin
+    password: jemin
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8070
+
+application:
+  config:
+    customer-url: http://localhost:8222/api/v1/customers  # API Gateway 구현 전 URL
+    product-url: http://localhost:8222/api/v1/products  # API Gateway 구현 전 URL
+    payment-url: http://localhost:2222/api/v1/payments  # API Gateway 구현 전 URL
