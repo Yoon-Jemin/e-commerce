@@ -1,4 +1,4 @@
-package com.study.ecommerce.product.exception;
+package com.study.ecommerce.handler;
 
 import java.util.Map;
 

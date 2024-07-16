@@ -3,6 +3,7 @@ package com.study.ecommerce.orderline.service;
 import com.study.ecommerce.order.domain.Order;
 import com.study.ecommerce.orderline.domain.OrderLine;
 import com.study.ecommerce.orderline.dto.request.OrderLineRequest;
+import com.study.ecommerce.orderline.dto.response.OrderLineResponse;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -18,5 +19,9 @@ public class OrderLineMapper {
                 )
                 .productId(request.productId())
                 .build();
+    }
+
+    public OrderLineResponse toOrderLineResponse(OrderLine orderLine) {
+        return new OrderLineResponse(orderLine.getId(), orderLine.getQuantity());
     }
 }
