@@ -35,7 +35,7 @@ public class OrderService {
     private final OrderProducer orderProducer;
     private final PaymentClient paymentClient;
 
-    public Integer createdOrder(final OrderRequest request) {
+    public Integer createOrder(final OrderRequest request) {
 
         // customer check -> customer-ms 이용 (OpenFeign 이용)
         CustomerResponse customer = this.customerClient.findCustomerById(request.customerId())

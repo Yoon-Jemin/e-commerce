@@ -3,7 +3,6 @@ package com.study.ecommerce.order.presentation;
 import com.study.ecommerce.order.dto.request.OrderRequest;
 import com.study.ecommerce.order.dto.response.OrderResponse;
 import com.study.ecommerce.order.service.OrderService;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +21,7 @@ public class OrderController {
     public ResponseEntity<Integer> createOrder(
             @RequestBody @Valid OrderRequest request
     ){
-        return ResponseEntity.ok(service.createdOrder(request));
+        return ResponseEntity.ok(service.createOrder(request));
     }
 
     @GetMapping

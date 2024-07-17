@@ -27,6 +27,7 @@ public class Order {
     @GeneratedValue
     private Integer id;
 
+    @Column(unique = true,  nullable = false)
     private String reference;
 
     private BigDecimal totalAmount;
@@ -44,7 +45,7 @@ public class Order {
     private LocalDateTime createdAt;
 
     @LastModifiedDate
-    @Column(insertable = false, nullable = false)
+    @Column(insertable = false)
     private LocalDateTime lastModifiedDate;
 
 }
